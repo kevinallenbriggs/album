@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+        <link rel="stylesheet" href="/css/main.css"/>
+        <title>{% block title %}{% endblock %} - Khamsi Briggs Family</title>
+    {% endblock %}
+</head>
+<body>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <div id="footer">
+        {% block footer %}
+            &copy; 2022 Kevin Briggs.
+        {% endblock %}
+    </div>
+
+</body>
+</html>

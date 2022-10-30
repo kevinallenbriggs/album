@@ -8,11 +8,19 @@ services:
     slim:
         image: php:8-alpine
         working_dir: /var/www
-        command: php -S 0.0.0.0:8080 -t public
+        command: php -S 0.0.0.0:8090 -t src/public
         environment:
             docker: "true"
         ports:
-            - 8080:8080
+            - 8090:8090
         volumes:
             - .:/var/www
             - logs:/var/www/logs
+
+    composer:
+        image: composer:2.4.3
+        command: diagnose
+        environment:
+            docker: "true"
+        volumes:
+            - .:/app
