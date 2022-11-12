@@ -16,15 +16,9 @@ $app->add(TwigMiddleware::create($app, $twig));
 $app->get('/', function (Request $request, Response $response, $args) {
     $view = Twig::fromRequest($request);
 
-    $imageUrls = [
-        'https://picsum.photos/300',
-        'https://picsum.photos/350',
-        'https://picsum.photos/360',
-        'https://picsum.photos/370'
-    ];
-
+    $imagePaths = glob('images/*');
     return $view->render($response, 'home.html', [
-        'imageUrls' => $imageUrls
+        'imagePaths' => $imagePaths
     ]);
 });
 

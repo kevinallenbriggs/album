@@ -13,8 +13,8 @@
     <h1>Gallery</h1>
 
     <div class="image-wrapper">
-        {% for imageUrl in imageUrls %}
-            <img src="{{ imageUrl }}" alt="lorem picsum random image">
+        {% for imagePath in imagePaths %}
+            <img src="/{{ imagePath }}">
         {% endfor %}
     </div>
 {% endblock %}
