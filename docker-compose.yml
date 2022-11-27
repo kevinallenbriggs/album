@@ -6,7 +6,8 @@ volumes:
 
 services:
     php:
-        image: php:8-alpine
+        build: "."
+        image: kevinallenbriggs/gallery
         working_dir: /var/www
         command: php -S 0.0.0.0:8090 -t src/public
         environment:
