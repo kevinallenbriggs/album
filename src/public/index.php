@@ -16,9 +16,17 @@ $app->add(TwigMiddleware::create($app, $twig));
 $app->get('/', function (Request $request, Response $response, $args) {
     $view = Twig::fromRequest($request);
 
-    $imagePaths = glob('images/*');
+    $images = array_filter(glob('images/*'), function($imagePath) {
+        try {
+            // $exifData = exif_read_data($imagePath);
+            return in_array(mime_content_type($imagePath), ['image/png', 'image/jpeg']);
+        } catch (\Exception $e) {
+            return false;
+        }
+    });
+
     return $view->render($response, 'home.html', [
-        'imagePaths' => $imagePaths
+        'imagePaths' => $images
     ]);
 });
 
