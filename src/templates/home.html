@@ -12,9 +12,11 @@
 {% block content %}
     <h1>Gallery</h1>
 
-    <div class="image-wrapper">
+    <div class="gallery">
         {% for imagePath in images %}
-            <img src="/{{ imagePath }}">
+            <div class="image-wrapper">
+                <img src="/{{ imagePath }}">
+            </div>
         {% endfor %}
     </div>
 {% endblock %}
