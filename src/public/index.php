@@ -15,18 +15,12 @@ $app->add(TwigMiddleware::create($app, $twig));
 
 $app->get('/', function (Request $request, Response $response, $args) {
     $view = Twig::fromRequest($request);
+    $validMimeTypes = ['image/png', 'image/jpeg'];
 
-    $images = array_filter(glob('images/*'), function($imagePath) {
-        try {
-            // $exifData = exif_read_data($imagePath);
-            return in_array(mime_content_type($imagePath), ['image/png', 'image/jpeg']);
-        } catch (\Exception $e) {
-            return false;
-        }
-    });
+    $images = array_filter(glob('images/*'), fn($imgPath) => in_array(mime_content_type($imgPath), $validMimeTypes));
 
     return $view->render($response, 'home.html', [
-        'imagePaths' => $images
+        'images' => $images
     ]);
 });
 
