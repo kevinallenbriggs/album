@@ -16,8 +16,17 @@ $app->add(TwigMiddleware::create($app, $twig));
 $app->get('/', function (Request $request, Response $response, $args) {
     $view = Twig::fromRequest($request);
     $validMimeTypes = ['image/png', 'image/jpeg'];
+    $images = [];
 
-    $images = array_filter(glob('images/*'), fn($imgPath) => in_array(mime_content_type($imgPath), $validMimeTypes));
+    // $imagePaths = array_filter(glob('images/*'), fn($imgPath) => in_array(mime_content_type($imgPath), $validMimeTypes));
+    foreach (glob('images/*') as $imgPath) {
+        if (! in_array(mime_content_type($imgPath), $validMimeTypes)) continue;
+        $images[] = [
+            'slug' => preg_replace('/[^A-Za-z0-9-]+/', '-', basename($imgPath)),
+            'filename' => basename($imgPath),
+            'path' => $imgPath,
+        ];
+    }
 
     return $view->render($response, 'home.html', [
         'images' => $images

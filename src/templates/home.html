@@ -10,10 +10,46 @@
     <h1>Khamsi-Briggs Family Gallery</h1>
 
     <div class="gallery">
-        {% for imagePath in images %}
+        {% for image in images %}
             <div class="image-wrapper">
-                <img src="/{{ imagePath }}">
+                <img src="/{{ image.path }}" id="{{ image.slug }}-thumbnail">
+
+                <!-- The Modal -->
+                <div id="{{ image.slug }}-modal" class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="{{ image.slug }}-large">
+                </div>
             </div>
         {% endfor %}
     </div>
+{% endblock %}
+
+{% block footer %}
+        {% for image in images %}
+            {% set htmlID = image.slug %}
+
+           <script>
+                // Get the modal
+                var modal = document.getElementById("{{ htmlID }}-modal");
+
+                // Get the image and insert it inside the modal - use its "alt" text as a caption
+                var img = document.getElementById("{{ htmlID }}-thumbnail");
+                var modalImg = document.getElementById("{{ htmlID }}-large");
+                img.onclick = function(){
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                }
+
+                // Get the <span> element that closes the modal
+                var closeElement = modal.getElementsByClassName("close")[0];
+
+                // When the user clicks on <span> (x), close the modal
+                closeElement.onclick = function() {
+                    modal.style.display = "none";
+                }
+            </script>
+        {% endfor %}
+
+   {{ parent() }}
+
 {% endblock %}
