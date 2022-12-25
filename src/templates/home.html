@@ -1,13 +1,16 @@
 {% extends "base.html" %}
 
-{% block title %}Gallery | kb-family.com{% endblock %}
+{% block title %}Gallery{% endblock %}
 
-{# {% block head %}
+{% block head %}
     {{ parent() }}
-{% endblock %} #}
+{% endblock %}
 
 {% block content %}
-    <h1>Khamsi-Briggs Family Gallery</h1>
+    <div>
+        <h1>Khamsi-Briggs Family Gallery</h1>
+        <div>last updated: December 24, 2022</div>
+    </div>
 
     <div class="gallery">
         {% for image in images %}
