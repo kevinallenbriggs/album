@@ -39,20 +39,29 @@
                 var img = document.getElementById("{{ htmlID }}-thumbnail");
                 var modalImg = document.getElementById("{{ htmlID }}-large");
                 img.onclick = function(){
-                    modal.style.display = "block";
+                    modal.style.display = "flex";
                     modalImg.src = this.src;
                 }
 
                 // Get the <span> element that closes the modal
                 var closeElement = modal.getElementsByClassName("close")[0];
 
-                // When the user clicks on <span> (x), close the modal
+                // close the modal when x <span> element clicked
                 closeElement.onclick = function() {
                     modal.style.display = "none";
                 }
-            </script>
+
+                // close modal when ESC key pressed
+                document.addEventListener('keydown', function(e) {
+                    const keyCode = e.keyCode;
+                    console.log("Key Code: "+keyCode+"<br/> Key: "+e.key);
+                    if (keyCode === 27) {//keycode is an Integer, not a String
+                        modal.style.display= "none";
+                    }
+                });
+                </script>
         {% endfor %}
 
    {{ parent() }}
-
+   <div id="result"></div>
 {% endblock %}
