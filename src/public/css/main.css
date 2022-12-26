@@ -1,7 +1,7 @@
 body {
     background-color: rgb(202, 202, 202);
     text-align: center;
-    font-family: Montserrat, sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
@@ -75,7 +75,7 @@ h1 {
   right: 35px;
   color: #f1f1f1;
   font-size: 40px;
-  font-weight: bold;
+  font-weight: 500;
   transition: 0.3s;
 }
 
