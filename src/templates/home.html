@@ -15,12 +15,12 @@
     <div class="gallery">
         {% for image in images %}
             <div class="image-wrapper">
-                <img src="/{{ image.path }}" id="{{ image.slug }}-thumbnail">
+                <img src="/{{ image.path }}" id="{{ image.slug }}-thumbnail" loading="lazy">
 
                 <!-- The Modal -->
                 <div id="{{ image.slug }}-modal" class="modal">
                     <span class="close">&times;</span>
-                    <img class="modal-content" id="{{ image.slug }}-large">
+                    <img class="modal-content" id="{{ image.slug }}-large" loading="lazy">
                 </div>
             </div>
         {% endfor %}
