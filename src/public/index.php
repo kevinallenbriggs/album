@@ -15,7 +15,7 @@ $app->add(TwigMiddleware::create($app, $twig));
 
 $app->get('/', function (Request $request, Response $response, $args) {
     $view = Twig::fromRequest($request);
-    $validMimeTypes = ['image/png', 'image/jpeg'];
+    $validMimeTypes = ['image/png', 'image/jpeg', 'image/webp'];
     $images = [];
 
     // $imagePaths = array_filter(glob('images/*'), fn($imgPath) => in_array(mime_content_type($imgPath), $validMimeTypes));
