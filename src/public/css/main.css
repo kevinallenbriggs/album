@@ -110,7 +110,9 @@ h1 {
   transition: 0.3s;
 }
 
-@media (max-aspect-ratio: 1) {
+@media (max-aspect-ratio: 1),
+       (-moz-max-aspect-ratio: 1),
+       (-webkit-max-aspect-ratio: 1) {
   .close {
     font-size: 6em;
   }
