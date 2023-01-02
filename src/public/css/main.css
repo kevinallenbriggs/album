@@ -13,7 +13,7 @@ h1 {
 
 #content {
   margin: auto;
-  max-width: 1600px;
+  /* max-width: 90%; */
 }
 
 .gallery {
@@ -21,11 +21,11 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2em;
+    gap: 1.5em;
 }
 
 .card {
-    flex-basis: 350px; /* width: 350px; */
+    flex-basis: 300px; /* width */
 }
 
 .card > img {
