@@ -14,13 +14,13 @@
 
     <div class="gallery">
         {% for image in images %}
-            <div class="image-wrapper">
-                <img src="/{{ image.path }}" id="{{ image.slug }}-thumbnail" loading="lazy">
+            <div class="card"">
+                <img src="/{{ image.path }}" class="card__thumbnail" id="{{ image.slug }}-thumbnail" loading="lazy">
 
                 <!-- The Modal -->
-                <div id="{{ image.slug }}-modal" class="modal">
+                <div id="{{ image.slug }}-modal" class="card__modal">
                     <span class="close">&times;</span>
-                    <img class="modal-content" id="{{ image.slug }}-large" loading="lazy">
+                    <img class="card__modal--image" id="{{ image.slug }}-large">
                 </div>
             </div>
         {% endfor %}
