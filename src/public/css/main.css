@@ -110,14 +110,21 @@ h1 {
   transition: 0.3s;
 }
 
-@media (max-aspect-ratio: 1),
-       (-moz-max-aspect-ratio: 1),
-       (-webkit-max-aspect-ratio: 1) {
+@media (max-resolution: 300dpi),
+       (-moz-max-resolution: 300dpi),
+       (-webkit-max-resolution: 300dpi) {
   .close {
-    font-size: 6em;
+    font-size: 9em;
   }
 }
 
+@media (max-resolution: 200dpi),
+       (-moz-max-resolution: 200dpi),
+       (-webkit-max-resolution: 200dpi) {
+  .close {
+    font-size: 7em;
+  }
+}
 
 .close:hover,
 .close:focus {
