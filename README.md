@@ -1,1 +1,2 @@
-symlink directory containing media to src/images/
+symlink directory containing media to var/images/
+run cron/ProcessImages.php

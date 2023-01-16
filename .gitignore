@@ -5,4 +5,4 @@
 /logs/*
 !/logs/README.md
 .phpunit.result.cache
-/src/public/images
+/var/images/*

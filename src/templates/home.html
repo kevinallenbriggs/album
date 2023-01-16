@@ -15,7 +15,7 @@
     <div class="gallery">
         {% for image in images %}
             <div class="card"">
-                <img src="/{{ image.path }}" class="card__thumbnail" id="{{ image.slug }}-thumbnail" loading="lazy">
+                <img src="{{ image.thumbnail.path }}" class="card__thumbnail" id="{{ image.thumbnail.slug }}-thslug }}-umbnail" "lazy">
 
                 <!-- The Modal -->
                 <div id="{{ image.slug }}-modal" class="card__modal">

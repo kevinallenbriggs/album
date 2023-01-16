@@ -18,15 +18,25 @@ $app->get('/', function (Request $request, Response $response, $args) {
     $validMimeTypes = ['image/png', 'image/jpeg', 'image/webp'];
     $images = [];
 
-    // $imagePaths = array_filter(glob('images/*'), fn($imgPath) => in_array(mime_content_type($imgPath), $validMimeTypes));
-    foreach (glob('images/*') as $imgPath) {
+    foreach (glob('images/thumbnails/*') as $imgPath) {
         if (! in_array(mime_content_type($imgPath), $validMimeTypes)) continue;
-        $images[] = [
-            'slug' => preg_replace('/[^A-Za-z0-9-]+/', '-', basename($imgPath)),
+
+        $images[basename($imgPath)]['thumbnail'] = [
+            'slug' => preg_replace('/[^A-Za-z0-9-]+/', '-', basename($imgPath)) . '-thumbnail',
             'filename' => basename($imgPath),
             'path' => $imgPath,
         ];
     }
+
+    // foreach (glob('images/large/*') as $imgPath) {
+    //     if (! in_array(mime_content_type($imgPath), $validMimeTypes)) continue;
+
+    //     $images[basename($imgPath)]['large'] = [
+    //         'slug' => preg_replace('/[^A-Za-z0-9-]+/', '-', basename($imgPath)) . '-large',
+    //         'filename' => basename($imgPath),
+    //         'path' => $imgPath,
+    //     ];
+    // }
 
     return $view->render($response, 'home.html', [
         'images' => $images

@@ -6,9 +6,9 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  html {
+    html {
         scroll-behavior: smooth;
-  }
+    }
 }
 
 label,
@@ -41,8 +41,8 @@ h1 {
 }
 
 #content {
-  margin: auto;
-  /* max-width: 90%; */
+    margin: auto;
+    /* max-width: 90%; */
 }
 
 .gallery {
@@ -60,28 +60,28 @@ h1 {
 }
 
 .card > img {
-	object-fit: cover;
-	max-width: 95vw;
-	height: 100%;
-	border-radius: 1em;
-  box-shadow:
-      0 1px 1px hsla(0, 0%, 0%, 0.075),
-      0 2px 2px hsl(0deg 0% 0% / 0.075),
-      0 4px 4px hsl(0deg 0% 0% / 0.075),
-      0 8px 8px hsl(0deg 0% 0% / 0.075),
-      0 16px 16px hsl(0deg 0% 0% / 0.075);
-  transition: 0.3s;
-  opacity: 0.9
+    object-fit: cover;
+    max-width: 95vw;
+    height: 100%;
+    border-radius: 1em;
+    box-shadow:
+    0 1px 1px hsla(0, 0%, 0%, 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075),
+    0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075),
+    0 16px 16px hsl(0deg 0% 0% / 0.075);
+    transition: 0.3s;
+    opacity: 0.9
 }
 
 .card > img:hover {
     opacity: 1;
     box-shadow:
-        0 1px 1px hsla(0, 0%, 0%, 0.1),
-        0 2px 2px hsl(0deg 0% 0% / 0.1),
-        0 4px 4px hsl(0deg 0% 0% / 0.1),
-        0 8px 8px hsl(0deg 0% 0% / 0.1),
-        0 16px 16px hsl(0deg 0% 0% / 0.1);
+    0 1px 1px hsla(0, 0%, 0%, 0.1),
+    0 2px 2px hsl(0deg 0% 0% / 0.1),
+    0 4px 4px hsl(0deg 0% 0% / 0.1),
+    0 8px 8px hsl(0deg 0% 0% / 0.1),
+    0 16px 16px hsl(0deg 0% 0% / 0.1);
     cursor: pointer;
 }
 
@@ -90,65 +90,65 @@ h1 {
 }
 
 @-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)}
-  to {-webkit-transform:scale(1)}
+    from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
 }
 
 @keyframes zoom {
-  from {transform:scale(0)}
-  to {transform:scale(1)}
+    from {transform:scale(0)}
+    to {transform:scale(1)}
 }
 
 /* The modal Close Button */
 .close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 3em;
-  font-weight: 500;
-  transition: 0.3s;
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 3em;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
 @media (max-aspect-ratio: 1),
-       (-moz-max-aspect-ratio: 1),
-       (-webkit-max-aspect-ratio: 1) {
-  .close {
-    font-size: 6em;
-  }
+(-moz-max-aspect-ratio: 1),
+(-webkit-max-aspect-ratio: 1) {
+    .close {
+        font-size: 6em;
+    }
 }
 
 
 .close:hover,
 .close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /* The Modal (background) */
 .card__modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 }
 
 /* Modal Content (image) */
 .card__modal--image {
-  margin: auto;
-  display: block;
-  max-width: 85vw;
-  max-height: 90vh;
-  object-fit: contain;
-  -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.4s;
-  animation-name: zoom;
-  animation-duration: 0.4s;
+    margin: auto;
+    display: block;
+    max-width: 85vw;
+    max-height: 90vh;
+    object-fit: contain;
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.4s;
+    animation-name: zoom;
+    animation-duration: 0.4s;
 }
